@@ -1,4 +1,6 @@
 import './App.css';
+import { datacontext } from './context/UserContext';
+import { useContext } from 'react';
 import Navbar from './components/Navbar';
 import Categories from './components/Categories';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -54,8 +56,7 @@ function App() {
     );
     return filtercards;
   }
-
-  const [dark, setDark] = useState(false);
+  let { dark, setDark } = useContext(datacontext);
   const [sidecart, setsidecart] = useState(false);
   const [sidebar, setsidebar] = useState(false);
 
@@ -64,8 +65,8 @@ function App() {
     <BrowserRouter>
       <div className={`app ${dark ? 'dark-app' : ''}`}>
         <div id='navbar'>
-          <Navbar searchQuery={searchQuery} onSearchChange={setSearchQuery} dark={dark} setDark={setDark} sidecart={sidecart} setsidecart={setsidecart} 
-          sidebar={sidebar} setsidebar={setsidebar}/></div>
+          <Navbar searchQuery={searchQuery} onSearchChange={setSearchQuery} dark={dark} setDark={setDark} sidecart={sidecart} setsidecart={setsidecart}
+            sidebar={sidebar} setsidebar={setsidebar} /></div>
         <div className='category category1'>
           <Categories title="All" link="/"> </Categories>
           <Categories title="Mobiles" link="/mobiles"> </Categories>

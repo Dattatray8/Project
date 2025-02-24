@@ -127,6 +127,37 @@ span {
     color: white;
 }
 
+.dark-theme a:hover{
+    border: 1px solid white;
+}
+
+.dark-theme .theme:hover{
+    border: 1px solid white;
+}
+
+.dark-theme .cart-icon:hover{
+    border: 1px solid white;
+}
+
+.dark-theme #search-icon{
+    color: indigo;
+    box-shadow: 2px 2px 10px white;
+}
+
+.dark-theme #search-box{
+    box-shadow: 2px 2px 10px white;
+}
+
+.dark-theme #sidebar-icon{
+    color: white;
+    border: 1px solid white;
+}
+
+.dark-theme .cart-container{
+    color: indigo;
+    border: 1px solid white;
+}
+
 .sidebar {
     display: flex;
     justify-content: flex-end;

@@ -9,8 +9,8 @@ import { useContext } from 'react';
 import { datacontext } from '../context/UserContext';
 import Cart from './Cart';
 
-function Navbar({ searchQuery, onSearchChange, dark, setDark, sidecart, setsidecart, sidebar, setsidebar }) {
-    let { cnt,clicked } = useContext(datacontext);
+function Navbar({ searchQuery, onSearchChange, sidecart, setsidecart, sidebar, setsidebar }) {
+    let { cnt,clicked,dark,setDark } = useContext(datacontext);
     let msg = null;
     if(!clicked){
         msg ="Empty Cart..";

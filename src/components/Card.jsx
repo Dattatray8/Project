@@ -3,10 +3,10 @@ import './Card.css';
 import { datacontext } from '../context/UserContext';
 
 function Card(props) {
-    let {addtocart} = useContext(datacontext);
+    let {addtocart,dark} = useContext(datacontext);
     
     return (
-        <div className="card">
+        <div className={`card ${dark ? 'dark-card' : ''}`}>
             <img src={props.img} alt="" />
             <p id='product-name'>{props.pname}</p>
             <p id='discount'>{props.discount}</p>

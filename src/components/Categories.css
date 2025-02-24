@@ -18,6 +18,10 @@
     transform: scale(1.03);
 }
 
+.dark-cbox{
+    box-shadow: 2px 2px 10px white;
+}
+
 .cname {
     background-color: white;
     padding: 5px;

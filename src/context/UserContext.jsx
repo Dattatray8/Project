@@ -2,16 +2,18 @@ import { createContext, useState } from "react";
 
 export const datacontext = createContext();
 
-function UserContext({children}){
-    const [added,setadded] = useState(false);
-    const [cnt,setcnt] = useState(0);
-    const [clicked,setclicked] = useState(false);
-    const[cartItems,setcartItems] = useState([]);
+function UserContext({ children }) {
+    const [added, setadded] = useState(false);
+    const [dark, setDark] = useState(false);
 
-    function addtocart(img,price,name){
-        setcartItems((prev)=>[...prev,{img,price,name}]);
+    const [cnt, setcnt] = useState(0);
+    const [clicked, setclicked] = useState(false);
+    const [cartItems, setcartItems] = useState([]);
+
+    function addtocart(img, price, name) {
+        setcartItems((prev) => [...prev, { img, price, name }]);
         setadded(true);
-        setcnt(cnt+1);
+        setcnt(cnt + 1);
         setclicked(true);
     }
 
@@ -24,7 +26,9 @@ function UserContext({children}){
         setclicked,
         cartItems,
         setcartItems,
-        addtocart
+        addtocart,
+        dark,
+        setDark
     }
 
     return (
