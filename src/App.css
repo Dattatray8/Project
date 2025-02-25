@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     background-color: rgb(219, 218, 218);
+    transition: background-color 0.4s , color 0.4s;
 }
 
 .dark-app {
@@ -10,10 +11,6 @@
     margin: 0;
     box-sizing: border-box;
     background-color: black;
-}
-
-* {
-    transition: background-color 0.4s , color 0.4s;
 }
 
 #navbar {
@@ -54,15 +51,23 @@
     left: 0;
     height: 70px;
     width: 70px;
-    color: indigo;
+    color: white;
     border-radius: 50px;
     padding: 20px;
     margin: 15px;
-    box-shadow: 2px 2px 15px;
+    box-shadow: 2px 2px 15px black;
     cursor: pointer;
     transition: 0.5 all;
+    background-color: indigo;
 }
 
 #assistant-btn:hover {
     transform: scale(1.1);
+    box-shadow: 2px 2px 20px black;
+}
+
+.dark-app #assistant-btn{
+    color: indigo;
+    background-color: white;
+    box-shadow: 2px 2px 25px white;
 }

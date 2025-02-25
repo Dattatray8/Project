@@ -46,6 +46,7 @@ import acerneo from './images/acerneo.webp';
 import acerswift from './images/acerswift.webp';
 import React, { useState } from 'react';
 import { FaRobot } from "react-icons/fa6";
+import Footer from './components/Footer';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -399,6 +400,7 @@ function App() {
         <div>
           <FaRobot id='assistant-btn' onClick={() => { recognition.start(); }} />
         </div>
+        <Footer />
       </div>
     </BrowserRouter>
   );
