@@ -57,16 +57,59 @@ function App() {
     );
     return filtercards;
   }
-  let { dark, setDark, recognition } = useContext(datacontext);
-  const [sidecart, setsidecart] = useState(false);
-  const [sidebar, setsidebar] = useState(false);
+  let { dark, setDark, setordered, speak, setsidecart, setsidebar } = useContext(datacontext);
+
+  let voiceRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+
+  let recognition = new voiceRecognition()
+
+  recognition.onresult = (e) => {
+    const speakedText = e.results[0][0].transcript.toLowerCase();
+    console.log(speakedText);
+    if (speakedText.includes("place") || speakedText.includes("place order")) {
+      setordered(true);
+      setTimeout(() => {
+        setordered(false);
+      }, 5000);
+      speak("Your order has been placed.")
+    }
+    if (speakedText.includes("youtube")) {
+      window.open("https://www.youtube.com/", "_blank")
+    }
+    if (speakedText.includes("google")) {
+      window.open("https://www.google.com/", "_blank")
+    }
+    if (speakedText.includes("chrome")) {
+      window.open("https://www.chrome.com/", "_blank")
+    }
+    if (speakedText.includes("who") || speakedText.includes("you")) {
+      speak("i am your virtual assistant")
+    }
+    if (speakedText.includes("dark")) {
+      setDark(dark = !dark); dark ? speak("dark theme activated") : speak("light theme activated")
+    }
+    if (speakedText.includes("light")) {
+      setDark(dark = !dark); dark ? speak("dark theme activated") : speak("light theme activated")
+    }
+    if (speakedText.includes("cart") || speakedText.includes("cart-section")) {
+      setsidecart(true)
+    }
+    if (speakedText.includes("sidebar")) {
+      setsidebar(true)
+    }
+    if (speakedText.includes("close cart") || speakedText.includes("close cart-section")) {
+      setsidecart(false)
+    }
+    if (speakedText.includes("close sidebar")) {
+      setsidebar(false)
+    }
+  }
 
   return (
     <BrowserRouter>
       <div className={`app ${dark ? 'dark-app' : ''}`}>
         <div id='navbar'>
-          <Navbar searchQuery={searchQuery} onSearchChange={setSearchQuery} dark={dark} setDark={setDark} sidecart={sidecart} setsidecart={setsidecart}
-            sidebar={sidebar} setsidebar={setsidebar} /></div>
+          <Navbar searchQuery={searchQuery} onSearchChange={setSearchQuery} /></div>
         <div className='category category1'>
           <Categories title="All" link="/"> </Categories>
           <Categories title="Mobiles" link="/mobiles"> </Categories>
@@ -354,7 +397,7 @@ function App() {
           }></Route>
         </Routes>
         <div>
-          <FaRobot id='assistant-btn' onClick={()=>{recognition.start();}}/>
+          <FaRobot id='assistant-btn' onClick={() => { recognition.start(); }} />
         </div>
       </div>
     </BrowserRouter>

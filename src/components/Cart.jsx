@@ -5,9 +5,9 @@ import { TfiClose } from "react-icons/tfi";
 import './cart.css';
 
 function Cart() {
-    let { cartItems, setcartItems, setclicked, cnt, setcnt, speak } = useContext(datacontext);
+    let { cartItems, setcartItems, setclicked, cnt, setcnt, speak, ordered, setordered } = useContext(datacontext);
     const [q, setq] = useState(1);
-    const [ordered, setordered] = useState(false);
+    // const [ordered, setordered] = useState(false);
 
     function remove(index) {
         setcartItems(cartItems.filter((_, i) => i !== index));
