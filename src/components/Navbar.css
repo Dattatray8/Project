@@ -154,7 +154,11 @@ span {
 }
 
 .dark-theme .cart-container{
-    color: indigo;
+    color: white;
+    background-color: black;
+}
+
+.dark-theme li:hover{
     border: 1px solid white;
 }
 

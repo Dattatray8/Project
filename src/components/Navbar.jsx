@@ -10,7 +10,7 @@ import { datacontext } from '../context/UserContext';
 import Cart from './Cart';
 
 function Navbar({ searchQuery, onSearchChange, sidecart, setsidecart, sidebar, setsidebar }) {
-    let { cnt,clicked,dark,setDark } = useContext(datacontext);
+    let { cnt,clicked,dark,setDark,speak } = useContext(datacontext);
     let msg = null;
     if(!clicked){
         msg ="Empty Cart..";
@@ -31,7 +31,7 @@ function Navbar({ searchQuery, onSearchChange, sidecart, setsidecart, sidebar, s
                 <a href="/login">Login</a>
                 <a href="/SignUp">SignUp</a>
             </div>
-            <div className='theme' onClick={() => { setDark(dark = !dark) }}>
+            <div className='theme' onClick={() => { setDark(dark = !dark); dark ? speak("dark theme activated") : speak("light theme activated") }}>
                 <VscColorMode />
             </div>
             <div className='cart-icon' onClick={() => { setsidecart(true) }}>

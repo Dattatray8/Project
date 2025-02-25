@@ -5,7 +5,7 @@ import { TfiClose } from "react-icons/tfi";
 import './cart.css';
 
 function Cart() {
-    let { cartItems, setcartItems, setclicked, cnt, setcnt } = useContext(datacontext);
+    let { cartItems, setcartItems, setclicked, cnt, setcnt, speak } = useContext(datacontext);
     const [q, setq] = useState(1);
     const [ordered, setordered] = useState(false);
 
@@ -42,7 +42,7 @@ function Cart() {
                                 <p id="b1" onClick={() => { setq(q - 1) }}>-</p>
                                 <p>{q}</p>
                                 <p id="b3" onClick={() => { setq(q + 1) }}>+</p>
-                                <RiDeleteBin6Line id="del" onClick={() => { remove(index); setcnt(cnt - 1); }} />
+                                <RiDeleteBin6Line id="del" onClick={() => { remove(index); setcnt(cnt - 1); speak("Product is deleted from cart")}} />
                             </div>
                             <div className="price-sec">
                                 <hr />
@@ -63,6 +63,7 @@ function Cart() {
                                     setTimeout(() => {
                                         setordered(false);
                                     }, 5000);
+                                    speak("Your order has been placed.")
                                 }
                                 }>Place Order</button>
                             </div>

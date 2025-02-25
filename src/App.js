@@ -45,6 +45,7 @@ import aceralg from './images/aceralg.webp';
 import acerneo from './images/acerneo.webp';
 import acerswift from './images/acerswift.webp';
 import React, { useState } from 'react';
+import { FaRobot } from "react-icons/fa6";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -56,10 +57,9 @@ function App() {
     );
     return filtercards;
   }
-  let { dark, setDark } = useContext(datacontext);
+  let { dark, setDark, recognition } = useContext(datacontext);
   const [sidecart, setsidecart] = useState(false);
   const [sidebar, setsidebar] = useState(false);
-
 
   return (
     <BrowserRouter>
@@ -352,8 +352,10 @@ function App() {
               </FilterCard>
             </div>
           }></Route>
-
         </Routes>
+        <div>
+          <FaRobot id='assistant-btn' onClick={()=>{recognition.start();}}/>
+        </div>
       </div>
     </BrowserRouter>
   );

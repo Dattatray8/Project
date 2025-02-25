@@ -3,8 +3,8 @@ import './Card.css';
 import { datacontext } from '../context/UserContext';
 
 function Card(props) {
-    let {addtocart,dark} = useContext(datacontext);
-    
+    let { addtocart, dark, speak } = useContext(datacontext);
+
     return (
         <div className={`card ${dark ? 'dark-card' : ''}`}>
             <img src={props.img} alt="" />
@@ -13,7 +13,10 @@ function Card(props) {
             <p id='product-price'>{props.pprice}
                 <strike id="old-price">{props.oldp}</strike>
             </p>
-            <button id='add-to-cart-btn' onClick={()=>{ addtocart(props.img,props.pprice,props.pname)}}>Add to cart</button>
+            <button id='add-to-cart-btn' onClick={() => {
+                addtocart(props.img, props.pprice, props.pname);
+                speak("Product added to the cart, go to the top-right corner to see your cart and place the order. ")
+            }}>Add to cart</button>
         </div>
     );
 }

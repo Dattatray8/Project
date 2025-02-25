@@ -42,3 +42,23 @@
     box-sizing: border-box;
     overflow: hidden;
 }
+
+#assistant-btn{
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    height: 70px;
+    width: 70px;
+    color: indigo;
+    border-radius: 50px;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 2px 2px 15px;
+    cursor: pointer;
+    transition: 0.5 all;
+}
+
+#assistant-btn:hover{
+    transform: scale(1.1);
+}
