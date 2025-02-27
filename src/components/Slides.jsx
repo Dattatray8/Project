@@ -4,18 +4,25 @@ import laptopad from '../images/laptopad.webp';
 import headphonead from '../images/headphonead.webp';
 import { SlArrowLeft } from "react-icons/sl";
 import { SlArrowRight } from "react-icons/sl";
+import { useState } from 'react';
 
-function Slides(){
-    let images = [iphonead, laptopad, headphonead];
-    let index = 0;
+function Slides() {
+    let images = [
+        {src: iphonead, link: '/iphone'},
+        {src: laptopad, link: '/laptops'},
+        {src: headphonead, link: '/headphones'},
+    ];
+    const [index,setindex] = useState(0);
 
-    function next() { index = (index + 1) % images.length; updateImage(); }
-    function prev() { index = (index - 1 + images.length) % images.length; updateImage(); }
-    function updateImage() { document.getElementById("slider").src = images[index]; }
-    setInterval(next, 5000);
+    function next() { setindex((index + 1) % images.length) }
+    function prev() { setindex((index - 1 + images.length) % images.length)  }
+    setInterval(next,5000);
+    
     return (
         <div className="slide-container">
-            <img src={iphonead} alt="" id='slider'/>
+            <a href={images[index].link}>
+                <img src={images[index].src} alt="" id='slider' />
+            </a>
             <button id='btn-left' onClick={prev}><SlArrowLeft /></button>
             <button id='btn-right' onClick={next}><SlArrowRight /></button>
         </div>
