@@ -11,7 +11,7 @@ function Footer() {
             <footer className={`footer ${dark ? 'dark-footer' : ''}`}>
                 <div className="foot-container">
                     <div className="foot-sec">
-                        <h2>Shopio</h2>
+                        <h2>EzyShop</h2>
                         <p>Your trusted online shopping store.</p>
                     </div>
                     <div className="foot-sec">

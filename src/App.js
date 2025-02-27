@@ -83,7 +83,7 @@ function App() {
     if (speakedText.includes("chrome")) {
       window.open("https://www.chrome.com/", "_blank")
     }
-    if (speakedText.includes("who") || speakedText.includes("you")) {
+    if (speakedText.includes("who") || speakedText.includes("you")|| speakedText.includes("hu r u")) {
       speak("i am your virtual assistant")
     }
     if (speakedText.includes("dark")) {
@@ -92,13 +92,13 @@ function App() {
     if (speakedText.includes("light")) {
       setDark(dark = !dark); dark ? speak("dark theme activated") : speak("light theme activated")
     }
-    if (speakedText.includes("cart") || speakedText.includes("cart-section")) {
+    if (speakedText.includes("order") || speakedText.includes("order-section")) {
       setsidecart(true)
     }
     if (speakedText.includes("sidebar")) {
       setsidebar(true)
     }
-    if (speakedText.includes("close cart") || speakedText.includes("close cart-section")) {
+    if (speakedText.includes("close order") || speakedText.includes("close order-section")) {
       setsidecart(false)
     }
     if (speakedText.includes("close sidebar")) {

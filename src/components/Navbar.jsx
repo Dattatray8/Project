@@ -21,7 +21,7 @@ function Navbar({ searchQuery, onSearchChange }) {
             <div className='nav-icon'>
                 <TiShoppingCart />
             </div>
-            <b>Shopio</b>
+            <b>EzyShop</b>
             <form className='search' onSubmit={(e) => e.preventDefault()}>
                 <input type='text' placeholder='Search Shopio..' id='search-box' value={searchQuery} onChange={(e) => onSearchChange(e.target.value)} />
                 <BsSearch id='search-icon' />
