@@ -1,9 +1,6 @@
-import { createContext,  useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { createContext, useState } from "react";
 
 export const datacontext = createContext();
-
-// const navi = useContext();
 
 function UserContext({ children }) {
 
@@ -17,24 +14,14 @@ function UserContext({ children }) {
         window.speechSynthesis.speak(text_speak);
     }
 
-    // let voiceRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
-
-    // let recognition = new voiceRecognition()
-
-    // recognition.onresult = (e) => {
-    //     const speakedText = e.results[0][0].transcript.toLowerCase();
-    //     // console.log(speakedText);
-    //     if(speakedText.includes("mobile")||speakedText.includes("mobiles")){
-    //         navi("/mobiles");
-    //     }
-    // }
-
     const [added, setadded] = useState(false);
     const [dark, setDark] = useState(false);
-
     const [cnt, setcnt] = useState(0);
     const [clicked, setclicked] = useState(false);
     const [cartItems, setcartItems] = useState([]);
+    const [ordered, setordered] = useState(false);
+    const [sidecart, setsidecart] = useState(false);
+    const [sidebar, setsidebar] = useState(false);
 
     function addtocart(img, price, name) {
         setcartItems((prev) => [...prev, { img, price, name }]);
@@ -56,7 +43,12 @@ function UserContext({ children }) {
         dark,
         setDark,
         speak,
-        // recognition
+        ordered,
+        setordered,
+        sidebar,
+        sidecart,
+        setsidebar,
+        setsidecart
     }
 
     return (

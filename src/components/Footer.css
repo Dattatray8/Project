@@ -1,0 +1,55 @@
+.footer{
+    background-color: indigo;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.dark-footer{
+    background-color: black;
+}
+
+.foot-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.foot-sec{
+    min-width: 200px;
+    margin: 20px;
+}
+
+.foot-sec h3{
+    font-size: 20px;
+}
+
+.foot-sec ul{
+    list-style: none;
+    padding: 0;
+}
+
+.foot-sec ul li{
+    margin: 5px 0;
+}
+
+.foot-sec ul li:hover{
+    border: 1px solid white;
+}
+
+.foot-sec ul li a{
+    text-decoration: none;
+    color: #ddd;
+}
+
+.icons a{
+    color: white;
+    margin: 0 5px;
+    font-size: 25px;
+    transition: 0.5s all;
+}
+
+.icons a:hover{
+    color: rgb(6, 93, 255);
+}

@@ -9,8 +9,8 @@ import { useContext } from 'react';
 import { datacontext } from '../context/UserContext';
 import Cart from './Cart';
 
-function Navbar({ searchQuery, onSearchChange, sidecart, setsidecart, sidebar, setsidebar }) {
-    let { cnt,clicked,dark,setDark,speak } = useContext(datacontext);
+function Navbar({ searchQuery, onSearchChange }) {
+    let { cnt,clicked,dark,setDark,speak, sidecart, setsidecart, sidebar, setsidebar } = useContext(datacontext);
     let msg = null;
     if(!clicked){
         msg ="Empty Cart..";
@@ -54,7 +54,7 @@ function Navbar({ searchQuery, onSearchChange, sidecart, setsidecart, sidebar, s
                 <ul className='sidebar-content'>
                     <li>Login</li>
                     <li>Signup</li>
-                    <li onClick={() => { setDark(dark = !dark) }}><VscColorMode /></li>
+                    <li onClick={() => { setDark(dark = !dark); dark ? speak("dark theme activated") : speak("light theme activated") }}><VscColorMode /></li>
                     <li onClick={() => { setsidecart(true) }}><FiShoppingBag /> <span id='zero'>{cnt}</span></li>
                 </ul>
             </div>
