@@ -46,6 +46,8 @@ import acerneo from './images/acerneo.webp';
 import acerswift from './images/acerswift.webp';
 import React, { useState } from 'react';
 import { FaRobot } from "react-icons/fa6";
+import Login from './components/Login';
+import Signin from './components/Signin';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -117,7 +119,8 @@ function App() {
               </FilterCard>
             </div>
           }></Route>
-
+        <Route path='login' element={<Login />}/>
+        <Route path='signup' element={<Signin />}/>
           <Route path='/mobiles' element={
             <>
               <div className='category'>
@@ -357,6 +360,8 @@ function App() {
           <FaRobot id='assistant-btn' onClick={()=>{recognition.start();}}/>
         </div>
       </div>
+    
+      
     </BrowserRouter>
   );
 }
