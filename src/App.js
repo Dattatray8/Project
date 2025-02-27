@@ -85,7 +85,7 @@ function App() {
     if (speakedText.includes("chrome")) {
       window.open("https://www.chrome.com/", "_blank")
     }
-    if (speakedText.includes("who") || speakedText.includes("you")|| speakedText.includes("hu r u")) {
+    if (speakedText.includes("who") || speakedText.includes("you") || speakedText.includes("hu r u")) {
       speak("i am your virtual assistant")
     }
     if (speakedText.includes("dark")) {
@@ -119,10 +119,11 @@ function App() {
           <Categories title="Laptops" link="/laptops"> </Categories>
           <Categories title="HeadPhones" link="/headphones"> </Categories>
         </div>
-        <Slides />
+        {/* <Slides /> */}
         <Routes>
           <Route path='/' element={
             <div className='card-container'>
+              <Slides />
               <FilterCard>
                 <Card img={iphone15} pname="Iphone15" discount="-23%" pprice="Rs. 61499/-" oldp="79000"></Card>
                 <Card img={lenovothink} pname="Lenovo ThinkPad" pprice="Rs. 17538/-" discount="-65%" oldp="49999"></Card>
@@ -163,8 +164,8 @@ function App() {
               </FilterCard>
             </div>
           }></Route>
-        <Route path='login' element={<Login />}/>
-        <Route path='signup' element={<Signin />}/>
+          <Route path='login' element={<Login />} />
+          <Route path='signup' element={<Signin />} />
           <Route path='/mobiles' element={
             <>
               <div className='category'>
@@ -405,8 +406,8 @@ function App() {
         </div>
         <Footer />
       </div>
-    
-      
+
+
     </BrowserRouter>
   );
 }

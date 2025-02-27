@@ -1,7 +1,9 @@
 "use client"
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { datacontext } from "../context/UserContext";
 
 function Login() {
+  let {notuser} = useContext(datacontext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -15,6 +17,7 @@ function Login() {
     }
     // Here you would typically handle the login logic
     console.log("Login attempt with:", { email, password });
+    window.location.href = '/';
     // Reset form and error after submission
     setEmail("");
     setPassword("");
@@ -22,7 +25,7 @@ function Login() {
   };
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', backgroundColor: '#f3f4f6' }}>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', backgroundColor: 'rgb(219, 218, 218)' }}>
       <div style={{ width: '100%', maxWidth: '400px', backgroundColor: 'white', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', borderRadius: '8px', padding: '16px' }}>
         <div style={{ paddingBottom: '16px', borderBottom: '1px solid #e5e7eb' }}>
           <h2 style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>Login</h2>
@@ -54,7 +57,7 @@ function Login() {
               />
             </div>
             {error && <p style={{ color: 'red', fontSize: '0.875rem' }}>{error}</p>}
-            <button type="submit" style={{ padding: '8px', borderRadius: '4px', backgroundColor: '#3b82f6', color: 'white', border: 'none', cursor: 'pointer' }}>
+            <button type="submit" onClick={notuser(true)} style={{ padding: '8px', borderRadius: '4px', backgroundColor: 'indigo', color: 'white', border: 'none', cursor: 'pointer' }}>
               Log In
             </button>
           </form>

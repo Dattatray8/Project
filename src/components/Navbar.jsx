@@ -7,13 +7,14 @@ import { VscThreeBars } from "react-icons/vsc";
 import { TfiClose } from "react-icons/tfi";
 import { useContext } from 'react';
 import { datacontext } from '../context/UserContext';
+import { IoIosLogOut } from "react-icons/io";
 import Cart from './Cart';
 
 function Navbar({ searchQuery, onSearchChange }) {
-    let { cnt,clicked,dark,setDark,speak, sidecart, setsidecart, sidebar, setsidebar } = useContext(datacontext);
+    let { cnt, clicked, dark, setDark, speak, sidecart, setsidecart, sidebar, setsidebar, user, notuser } = useContext(datacontext);
     let msg = null;
-    if(!clicked){
-        msg ="Empty Cart..";
+    if (!clicked) {
+        msg = "Empty Cart..";
     }
 
     return (
@@ -27,10 +28,14 @@ function Navbar({ searchQuery, onSearchChange }) {
                 <BsSearch id='search-icon' />
             </form>
 
-            <div className='login'>
+            <div className={`login ${!user ? 'login1' : ''}`}>
                 <a href="/login">Login</a>
                 <a href="/SignUp">SignUp</a>
             </div>
+            <div className={`logout ${user ? 'login login1' : ''} `}>
+                Logout <IoIosLogOut id='logout-icon' onClick={() => { notuser(true) }} />
+            </div>
+
             <div className='theme' onClick={() => { setDark(dark = !dark); dark ? speak("dark theme activated") : speak("light theme activated") }}>
                 <VscColorMode />
             </div>
@@ -41,9 +46,10 @@ function Navbar({ searchQuery, onSearchChange }) {
             <div className='siderbar' onClick={() => { setsidebar(true) }}>
                 <VscThreeBars id='sidebar-icon' />
             </div>
+
             <div className={`s ${sidecart ? 'cart-container' : ''}`}>
                 <span className='incart-title'>Order items</span>
-                <TfiClose className='cartbar-close' onClick={() => { setsidecart(false) }} /> 
+                <TfiClose className='cartbar-close' onClick={() => { setsidecart(false) }} />
                 <span id='defmsg'>{msg}</span>
                 <div className='cart-item'>
                     <Cart />
@@ -52,8 +58,15 @@ function Navbar({ searchQuery, onSearchChange }) {
             <div className={`s s1 ${sidebar ? 'cart-container' : ''}`}>
                 <TfiClose className='sidebar-cross' onClick={() => { setsidebar(false) }} />
                 <ul className='sidebar-content'>
-                    <li>Login</li>
-                    <li>Signup</li>
+                    {/* <li>Login</li>
+                    <li>Signup</li> */}
+                    <div className='logs'><div className={`login ${!user ? 'login1' : ''}`}>
+                        <a href="/login">Login</a>
+                        <a href="/SignUp">SignUp</a>
+                    </div>
+                    <div className={` ${user ? 'login login1' : ''} `}>
+                        Logout <IoIosLogOut id='logout-icon' onClick={() => { notuser(true) }} />
+                    </div></div>
                     <li onClick={() => { setDark(dark = !dark); dark ? speak("dark theme activated") : speak("light theme activated") }}><VscColorMode /></li>
                     <li onClick={() => { setsidecart(true) }}><FiShoppingBag /> <span id='zero'>{cnt}</span></li>
                 </ul>

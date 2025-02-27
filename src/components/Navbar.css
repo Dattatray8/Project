@@ -71,6 +71,15 @@ b {
     margin-left: 25px;
 }
 
+.login1{
+    display: none;
+}
+
+#logout-icon{
+    font-size: 31px;
+    cursor: pointer;
+}
+
 .login a {
     text-decoration: none;
     color: black;
@@ -183,7 +192,8 @@ span {
     .login,
     .cart-icon,
     .theme,
-    .s {
+    .s,
+    .logout {
         display: none;
     }
 
@@ -226,7 +236,7 @@ span {
         margin-top: 15px;
     }
     b{
-        font-size: 23px;
+        font-size: 20px;
     }
     #sidebar-icon{
         font-size: 20px;
@@ -301,6 +311,17 @@ span {
 }
 
 li{
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.logs{
     display: flex;
     justify-content: center;
     height: 40px;

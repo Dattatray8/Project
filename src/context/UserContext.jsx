@@ -22,6 +22,7 @@ function UserContext({ children }) {
     const [ordered, setordered] = useState(false);
     const [sidecart, setsidecart] = useState(false);
     const [sidebar, setsidebar] = useState(false);
+    const [user,notuser] = useState(false);
 
     function addtocart(img, price, name) {
         setcartItems((prev) => [...prev, { img, price, name }]);
@@ -48,7 +49,9 @@ function UserContext({ children }) {
         sidebar,
         sidecart,
         setsidebar,
-        setsidecart
+        setsidecart,
+        user,
+        notuser
     }
 
     return (

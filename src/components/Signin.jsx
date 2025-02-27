@@ -1,8 +1,10 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
+import { datacontext } from "../context/UserContext"
 
 export default function SignInForm() {
+  let {notuser} = useContext(datacontext);
   const [name, setName] = useState("")
   const [Mobile, setMobile] = useState("")
   const [email, setEmail] = useState("")
@@ -20,13 +22,13 @@ export default function SignInForm() {
 
     // Here you would typically call your authentication API
     console.log("Signing in with:", email, password)
-
+    window.location.href = '/';
     // For demonstration purposes, we'll just show a success message
     setMessage("Sign in successful!")
   }
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', backgroundColor: 'white' }}>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', backgroundColor: 'rgb(219, 218, 218)' }}>
     <div style={{ width: '100%', maxWidth: '400px' }}>
       <div style={{ paddingBottom: '16px', borderBottom: '1px solid #e5e7eb' }}>
         <h2 style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>Sign In</h2>
@@ -82,7 +84,7 @@ export default function SignInForm() {
         />
       </div>
       {message && <p style={{ color: message === "Sign in successful!" ? 'green' : 'red', marginBottom: '16px' }}>{message}</p>}
-      <button type="submit" style={{ width: '100%', padding: '8px', borderRadius: '4px', backgroundColor: '#3b82f6', color: 'white', border: 'none', cursor: 'pointer' }}>
+      <button type="submit" onClick={notuser(true)} style={{ width: '100%', padding: '8px', borderRadius: '4px', backgroundColor: 'indigo', color: 'white', border: 'none', cursor: 'pointer' }}>
         Sign In
       </button>
      </form>
