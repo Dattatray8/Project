@@ -91,8 +91,8 @@ export default function SignInForm() {
      </div>
       <div style={{ paddingTop: '16px', borderTop:'1px solid #e5e7eb', textAlign: 'center' }}>
       <p style={{fontSize:'0.875rem', color: '#4b5563' }}>Already have an account. 
-      <button onClick={() => console.log("/login")} style={{ color: '#3b82f6', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}>
-        <a href="/login">Login</a>
+      <button onClick={() => console.log("/login")} style={{ color: '#3b82f6', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'none' }}>
+        <a href="/login" style={{textDecoration: 'none', }}>Login</a>
       </button>
       </p>
       </div>

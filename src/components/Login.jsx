@@ -65,7 +65,7 @@ function Login() {
         <div style={{ paddingTop: '16px', borderTop: '1px solid #e5e7eb', textAlign: 'center' }}>
           <p style={{ fontSize: '0.875rem', color: '#4b5563' }}>
             Don't have an account? 
-            <button onClick={() => window.location.href = '/signup'} style={{ color: '#3b82f6', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}>Sign up</button>
+            <button onClick={() => window.location.href = '/signup'} style={{ color: '#3b82f6', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'none' }}>Sign up</button>
           </p>
         </div>
       </div>
