@@ -42,7 +42,7 @@ function Footer() {
                 </div>
                 <hr />
                 <div className="foot-bottom">
-                    <p>© 2025 Shopio. All rights reserved.</p>
+                    <p>© 2025 EzyShop. All rights reserved.</p>
                 </div>
             </footer>
         </div>
