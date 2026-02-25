@@ -1,55 +1,57 @@
-.footer{
-    background-color: indigo;
+.footer {
+    background: linear-gradient(135deg, #312e81, #6d28d9);
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 28px 0 14px;
+    margin-top: 18px;
 }
 
-.dark-footer{
-    background-color: black;
+.dark-footer {
+    background: linear-gradient(135deg, #020617, #111827);
 }
 
-.foot-container{
+.foot-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 10px 20px 20px;
 }
 
-.foot-sec{
+.foot-sec {
     min-width: 200px;
-    margin: 20px;
+    margin: 14px;
 }
 
-.foot-sec h3{
+.foot-sec h3 {
     font-size: 20px;
 }
 
-.foot-sec ul{
+.foot-sec ul {
     list-style: none;
     padding: 0;
 }
 
-.foot-sec ul li{
+.foot-sec ul li {
     margin: 5px 0;
 }
 
-.foot-sec ul li:hover{
-    border: 1px solid white;
+.foot-sec ul li:hover {
+    text-decoration: underline;
 }
 
-.foot-sec ul li a{
+.foot-sec ul li a {
     text-decoration: none;
-    color: #ddd;
+    color: #e2e8f0;
 }
 
-.icons a{
+.icons a {
     color: white;
-    margin: 0 5px;
+    margin: 0 6px;
     font-size: 25px;
-    transition: 0.5s all;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.icons a:hover{
-    color: rgb(6, 93, 255);
+.icons a:hover {
+    color: #93c5fd;
+    transform: translateY(-1px);
 }
