@@ -2,22 +2,29 @@
     height: 300px;
     width: 100%;
     margin-bottom: 60px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .order {
     display: flex;
     height: 100px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    padding: 6px;
 }
 
 #order-img {
-    height: 100px;
+    height: 92px;
+    width: 92px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #f8fafc;
 }
 
 .text-section {
     display: flex;
     flex-direction: column;
-    margin-left: 5px;
+    margin-left: 8px;
 }
 
 #order-name {
@@ -29,7 +36,7 @@
     font-weight: 700;
 }
 
-.btn-grp{
+.btn-grp {
     height: 50px;
     display: flex;
     align-items: center;
@@ -37,32 +44,33 @@
     cursor: pointer;
 }
 
-.btn-grp p{
-    border: 1px solid indigo;
+.btn-grp p {
+    border: 1px solid #6366f1;
     width: 25px;
     text-align: center;
     margin-top: 15px;
 }
 
-.btn-grp p:hover{
-    background-color: rgb(234, 231, 231);
+.btn-grp p:hover {
+    background-color: #eef2ff;
 }
 
-#b1{
-    border-radius: 5px 0px 0px 5px;
+#b1 {
+    border-radius: 6px 0 0 6px;
 }
 
-#b3{
-    border-radius: 0px 5px 5px 0px;
+#b3 {
+    border-radius: 0 6px 6px 0;
 }
 
-#del{
-    font-size: 25px;
+#del {
+    font-size: 24px;
     margin-left: 150px;
 }
 
-#del:hover{
-    background-color: rgb(234, 231, 231);
+#del:hover {
+    background-color: #eef2ff;
+    border-radius: 6px;
 }
 
 .price-sec {
@@ -73,45 +81,48 @@
 
 .price-sec div {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     padding: 5px 0;
 }
 
 .price-sec p {
-    text-align: left; 
+    text-align: left;
     margin: 0;
 }
 
-#place-o{
+#place-o {
     border: none;
     outline: none;
     color: white;
-    background-color: indigo;
+    background: linear-gradient(135deg, #4338ca, #7c3aed);
     width: 100%;
-    border-radius: 3px;
+    border-radius: 10px;
     font-size: 15px;
-    padding: 5px;
-    transition: all 0.5s;
+    font-weight: 600;
+    padding: 8px;
+    transition: filter 0.2s ease, transform 0.2s ease;
 }
 
-#place-o:hover{
-    background-color: rgb(98, 43, 138);
+#place-o:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
 }
 
-.o-msg{
+.o-msg {
     width: 250px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 2px;
-    box-shadow: 2px 2px 10px black;
+    padding: 2px 2px 2px 18px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2);
     margin-top: 50px;
-    padding-left: 30px;
+    border-radius: 10px;
+    background: #f8fafc;
 }
 
-#close{
+#close {
     margin-left: 30px;
     cursor: pointer;
 }

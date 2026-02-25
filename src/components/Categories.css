@@ -1,54 +1,54 @@
 .cbox {
-    background-color: white;
+    background: linear-gradient(180deg, #ffffff 0%, #eef2ff 100%);
     height: auto;
-    padding: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 3px;
+    padding: 9px 14px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.1);
+    border-radius: 999px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
     cursor: pointer;
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    margin: 0px 20px;
-    transition: box-shadow 0.3s, transform 0.3s;
+    margin: 0 8px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .cbox:hover {
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
-    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.16);
+    transform: translateY(-2px);
 }
 
-.dark-cbox{
-    box-shadow: 2px 2px 10px white;
+.dark-cbox {
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    box-shadow: 0 6px 16px rgba(2, 6, 23, 0.4);
+    border: 1px solid rgba(148, 163, 184, 0.25);
 }
 
 .cname {
-    background-color: white;
-    padding: 5px;
-    font-weight: bold;
-    color: purple;
+    background-color: transparent;
+    padding: 2px;
+    font-weight: 700;
+    color: #4338ca;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 @media (max-width:500px) {
     .cbox {
-        padding: 0px 4px;
-        margin: 0 10px;
-        height: auto;
-        align-items: center;
-        padding: 1px;
-        width: auto;
-        border-radius: 3px;
+        margin: 0 4px;
+        border-radius: 14px;
+        padding: 7px 10px;
     }
 }
 
-@media (max-width:375px){
-    .cbox{
-        padding: 0 2px;
-        margin: 0 5px;
+@media (max-width:375px) {
+    .cbox {
+        margin: 0 3px;
+        padding: 6px 8px;
     }
-    .cname{
+
+    .cname {
         font-size: 12px;
     }
 }
